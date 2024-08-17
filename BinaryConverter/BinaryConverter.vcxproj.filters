@@ -12,9 +12,21 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="BinaryConverter\BinaryConverter.cpp">
+      <Filter>BinaryConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeConverter\CodeConverter.cpp">
+      <Filter>CodeConverter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="BinaryConverter\BinaryConverter.h">
+      <Filter>BinaryConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeConverter\CodeConverter.h">
+      <Filter>CodeConverter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -43,6 +55,12 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{8cbc95f1-51f3-4de1-ae3b-1e4b3dd9ddb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BinaryConverter">
+      <UniqueIdentifier>{9b6cd4c5-193c-4089-a387-28a6f9e020af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CodeConverter">
+      <UniqueIdentifier>{ebc00de1-f74d-4040-8ac4-effa5a70edd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -55,5 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
   </ItemGroup>
 </Project>

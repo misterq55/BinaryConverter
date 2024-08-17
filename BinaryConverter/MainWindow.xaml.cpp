@@ -4,6 +4,8 @@
 #include "MainWindow.g.cpp"
 #endif
 
+#include "BinaryConverter/BinaryConverter.h"
+
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 
@@ -22,8 +24,13 @@ namespace winrt::BinaryConverter::implementation
         throw hresult_not_implemented();
     }
 
-    void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
+    void MainWindow::Convert_Click(IInspectable const&, RoutedEventArgs const&)
     {
-        myButton().Content(box_value(L"Clicked"));
+        const std::wstring content = ContentText().Text().c_str();
+
+        FBinaryConverter binaryConverter;
+        const std::wstring converted = binaryConverter.Encode(content);
+
+        ConvertedText().Text(winrt::to_hstring(converted.c_str()));
     }
 }
