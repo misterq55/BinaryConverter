@@ -8,9 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBox Width="500" Height="200" x:Name="ContentText"></TextBox>
-        <Button x:Name="Convert" Click="Convert_Click">Convert</Button>
-        <TextBox Width="500" Height="200" x:Name="ConvertedText"></TextBox>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox Width="500" Height="200" x:Name="ContentText" TextWrapping="Wrap"></TextBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox HorizontalAlignment="Right"></ComboBox>
+            <Button x:Name="Convert" Click="Convert_Click" HorizontalAlignment="Right">Convert</Button>
+        </StackPanel>
+        <TextBox Width="500" Height="200" x:Name="ConvertedText" TextWrapping="Wrap" ></TextBox>
     </StackPanel>
 </Window>
